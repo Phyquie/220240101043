@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from 'react-router-dom'
 
 function Home() {
   const [formData, setFormData] = useState({
@@ -85,6 +86,7 @@ function Home() {
   return (
     <div className="min-h-screen bg-gray-50 flex justify-center items-center p-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6 md:p-8">
+        <Link to={"/stats"}>Click here for Stats Page</Link>
         <h1 className="text-2xl font-bold text-blue-600 mb-1">URL Shortener</h1>
         <p className="text-gray-500 mb-6">Create shortened URLs that are easy to share</p>
         
@@ -110,7 +112,7 @@ function Home() {
           
           <div>
             <label htmlFor="validity" className="block text-sm font-medium text-gray-700 mb-1">
-              Validity (days)
+              Validity (Minutes)
             </label>
             <input 
               type="number" 

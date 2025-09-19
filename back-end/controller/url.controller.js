@@ -9,11 +9,9 @@ const BASE_URL = 'http://localhost:3001';
 export const UrlShortner = async (req, res) => {
  
     try {
-        // Check if body exists
         if (!req.body) {
             return res.status(400).json({ error: 'Request body is missing' });
         }
-        console.log('Request body:', req.body);
         
         const { url, validity, shortcode } = req.body;
         
@@ -37,7 +35,7 @@ export const UrlShortner = async (req, res) => {
             }
         }
 
-        const expiresAt = new Date(Date.now() + validity * 60000); 
+        const expiresAt = new Date(Date.now() + Number(validity) * 60000); 
         const newUrl = await Url.create({
             originalUrl: url,
             shortcode: code,
