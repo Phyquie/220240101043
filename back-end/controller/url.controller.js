@@ -75,7 +75,6 @@ export const UrlRedirection = async (req, res) => {
             ip: req.ip || req.connection.remoteAddress,
             referrer: req.get('referer') || 'direct',
             location: {
-               
                 country: 'unknown',
                 region: 'unknown',
                 city: 'unknown',
